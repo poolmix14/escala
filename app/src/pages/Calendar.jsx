@@ -134,7 +134,8 @@ export default function Calendar() {
       )}
 
       <div className="max-w-lg mx-auto">
-        <AnimatePresence mode="wait">
+        {/* initial={false}: a primeira tela aparece na hora, sem esperar animação */}
+        <AnimatePresence mode="wait" initial={false}>
           {zoomedMonth === null ? (
             <YearView
               key="year"
@@ -160,7 +161,7 @@ export default function Calendar() {
 
       <BottomBar onTodayClick={handleTodayClick} />
 
-      <AnimatePresence>
+      <AnimatePresence initial={false}>
         {showSetup && (
           <SetupModal referenceDate={referenceDate} onSave={handleSaveReference} onClose={() => setShowSetup(false)} />
         )}
