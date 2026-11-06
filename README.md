@@ -8,11 +8,15 @@ Calendário da escala 12x36 (plantão dia sim, dia não), com feriados nacionais
 
 **App:** https://poolmix14.github.io/escala/
 
+## Estrutura
+
+- `app/` — código-fonte (React + Vite + Tailwind)
+- raiz (`index.html`, `assets/`) — app compilado, que o GitHub Pages serve direto (Settings → Pages → Deploy from a branch → `main` / `root`)
+
 ## Desenvolvimento
 
 ```bash
 npm install
-npm run dev
+npm run dev     # testar localmente
+npm run build   # gera o app compilado na raiz; depois é só fazer commit e push
 ```
-
-Cada push na branch `main` publica automaticamente no GitHub Pages (`.github/workflows/deploy.yml`).
